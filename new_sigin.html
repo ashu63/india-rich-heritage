@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+}
+
+.background {
+	background-image: url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	bottom: -20px;
+	right: -20px;
+	filter: blur(20px);
+	z-index: -1;
+}
+.signup h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.signup__button{
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup__button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(66, 66, 66);
+    text-decoration: none;
+    border: 2px solid rgb(245, 245, 245);
+    padding: 6px;
+    width: 190px;
+    border-radius: 8px;
+    background-color: rgb(253, 253, 253);
+    transition: .2s;
+}
+
+.first, .second{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first i {
+    position: absolute;
+    left: 83px;
+    color: blue;
+}
+.second i{
+    position: absolute;
+    left: 7px;
+    color: blue;
+}
+.first a{
+    margin-left: 80px;
+}
+.second a{
+    margin-right: 80px;
+}
+.signup__button a:hover{
+    box-shadow: 0.6px 0.3px 15px 0px rgba(236, 236, 236, 0.795);
+    color: slateblue;
+
+}
+#or{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.name{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.name input{
+    width: 300px;
+    height: 30px;
+    outline: none;
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 8px;
+   
+}
+#button{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 35px;
+    background-color: rgb(103, 85, 216);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    opacity: .8;
+    cursor: pointer;
+}
+#button:hover{
+    opacity: 1;
+}
+p{
+    color: white;
+}
+
+
+</style>
+<body>
+    <div class="background" id="background"></div>
+
+    <div class="container">
+        <div class="signup">
+            <h1>Sign In</h1>
+        </div>
+       <div class="signup__button">
+           <div class="first">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <a href=""> Sign In with facebook</a>
+           </div>
+           
+      <div class="second">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        <a href=""> Sign In with Google</a>
+      </div>
+   
+    
+       </div>
+       <p id="or">or</p>
+       <form action="" id="form">
+       <div class="inputs">
+           
+     
+        <div class="name">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="name">
+            <input type="password" id="password"  name="password" placeholder="Password">
+           </div>
+           <button id="button" type="submit">Submit</button>
+        </form>
+         <p>Don't Have an account? <a href="signup.html">Sign Up</a></p>
+
+       </div>
+    </div>
+
+
+<script>
+    const password = document.getElementById('password');
+const background = document.getElementById('background');
+
+password.addEventListener('input', (e) => {
+	const input = e.target.value;
+	const length = input.length;
+	const blurValue = 20 - length * 2;
+	background.style.filter = `blur(${blurValue}px)`;
+});
+
+
+
+// const floating_btn = document.querySelector('.floating-btn');
+// const close_btn = document.querySelector('.close-btn');
+// const social_panel_container = document.querySelector('.social-panel-container');
+
+// floating_btn.addEventListener('click', () => {
+// 	social_panel_container.classList.toggle('visible')
+// });
+
+// close_btn.addEventListener('click', () => {
+// 	social_panel_container.classList.remove('visible')
+// });
+</script>
+</body>
+</html>
